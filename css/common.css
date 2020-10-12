@@ -1,0 +1,113 @@
+.wrap {
+  overflow: hidden;
+  margin: 0 auto;
+  min-width: 320px;
+  padding-top: 52px;
+  padding-right: constant(safe-area-inset-right);
+  padding-left: constant(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-left: env(safe-area-inset-left);
+  padding-bottom: 60px;
+  line-height: 1.38; }
+  .wrap .head-button {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 18px 18px 10px;
+    height: 24px;
+    background: #fff; }
+  .wrap .content {
+    padding: 40px 30px 60px; }
+  .wrap .footer {
+    position: fixed;
+    bottom: 0;
+    bottom: constant(safe-area-inset-bottom);
+    bottom: env(safe-area-inset-bottom);
+    width: 100%; }
+
+.header {
+  padding: 0 30px; }
+  .header .logo {
+    margin-bottom: 30px;
+    padding-top: 16px; }
+  .header p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #636b73; }
+
+.page-head {
+  font-size: 26px;
+  color: #0e1012;
+  font-weight: 500;
+  line-height: 1.38; }
+
+input[type="checkbox"] {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  border: 0 !important;
+  outline-style: none;
+  caret-color: #ffeb00; }
+  input[type="checkbox"] + label {
+    display: block;
+    padding-left: 23px;
+    background-image: url("../images/ico_chk_sm.svg");
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    background-size: 10px auto; }
+  input[type="checkbox"]:checked + label {
+    background-image: url("../images/ico_chk_on.svg"); }
+  input[type="checkbox"].all-check + label {
+    padding-left: 38px;
+    line-height: 38px;
+    background-image: url("../images/ico_chk.svg");
+    background-size: 28px auto; }
+  input[type="checkbox"].all-check:checked + label {
+    background-image: url("../images/ico_chk_on.svg"); }
+
+.btn {
+  display: inline-block;
+  text-align: center; }
+  .btn-back {
+    width: 24px;
+    height: 24px;
+    background-image: url("../images/btn_back.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+  .btn-primary {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 17px;
+    color: #0e1012;
+    fong-weight: 700;
+    background: #ffeb00;
+    border-radius: 2px; }
+    .btn-primary.disabled {
+      color: #adb5bd;
+      background: #e9ecef; }
+
+.section-terms_agree {
+  padding: 20px 0 0; }
+  .section-terms_agree ul {
+    margin-top: 14px; }
+  .section-terms_agree li {
+    line-height: 1.43;
+    border: 1px solid #f1f3f5;
+    background: #f8f9fa; }
+    .section-terms_agree li + li {
+      margin-top: 8px; }
+    .section-terms_agree li a {
+      display: block;
+      padding: 20px 40px 20px 17px;
+      background-image: url("../images/ico_arrow_link.svg");
+      background-repeat: no-repeat;
+      background-position: calc(100% - 20px) center;
+      background-size: 5px auto; }
+
+/*# sourceMappingURL=common.css.map */
