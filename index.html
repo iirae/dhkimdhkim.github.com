@@ -17,7 +17,7 @@
     <body>
         <div class="wrap">
             <div class="head-button">
-                <a href="#" class="btn btn-back"></a>
+                <a href="javascript:history.back();" class="btn btn-back"></a>
             </div>
             <header class="header">
                 <h1 class="logo"><img src="./images/h1_logo_2x.png" alt="Re think INBYU"
@@ -27,22 +27,61 @@
                 <p>보험가입을 위해 약관에<br>동의 해주세요.</p>
             </header>
             <main class="content">
-                <dl class="section-terms_agree">
-                    <dt><input type="checkbox" id="termAgreeAllCheckbox" class="all-check"><label for="termAgreeAllCheckbox">전체동의</label></dt>
-                    <dd>
-                        <ul>
-                            <li><a href=""><input type="checkbox" id="termAgreeCheckbox2"><label for="termAgreeCheckbox2">단체보험 규약</label></a></li>
-                            <li><a href=""><input type="checkbox" id="termAgreeCheckbox3"><label for="termAgreeCheckbox3">개인(신용) 정보 수집·이용에 관한 사항</label></a></li>
-                            <li><a href=""><input type="checkbox" id="termAgreeCheckbox4"><label for="termAgreeCheckbox4">개인(신용)정보 제공에 관한 사항</label></a></li>
-                            <li><a href=""><input type="checkbox" id="termAgreeCheckbox5"><label for="termAgreeCheckbox5">[선택] 보험상품 및 서비스 소개를 위한 정보 활용</label></a></li>
-                        </ul>
-                    </dd>
-                </dl>
+                <fieldset>
+                    <dl class="section-terms_agree">
+                        <dt><input type="checkbox" id="termAgreeAllCheckbox" class="all-check"><label for="termAgreeAllCheckbox">전체동의</label></dt>
+                        <dd>
+                            <ul>
+                                <li><a href=""><input type="checkbox" id="termAgreeCheckbox2"><label for="termAgreeCheckbox2">단체보험 규약</label></a></li>
+                                <li><a href=""><input type="checkbox" id="termAgreeCheckbox3"><label for="termAgreeCheckbox3">개인(신용) 정보 수집·이용에 관한 사항</label></a></li>
+                                <li><a href=""><input type="checkbox" id="termAgreeCheckbox4"><label for="termAgreeCheckbox4">개인(신용)정보 제공에 관한 사항</label></a></li>
+                                <li><a href=""><input type="checkbox" id="termAgreeCheckbox5"><label for="termAgreeCheckbox5">[선택] 보험상품 및 서비스 소개를 위한 정보 활용</label></a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </fieldset>
             </main>
             <footer class="footer">
-                <a href="#" class="btn btn-primary disabled">확인</a>
-<!--                <a href="#" class="btn btn-primary">확인</a>-->
+                <a href="signup_form.html" class="btn btn-primary disabled">확인</a>
             </footer>
         </div>
+
+        <section class="layer">
+            <div class="head-button">
+                <a href="#" class="btn btn-close"></a>
+            </div>
+            <div class="container">
+                <h2>단체보험 규약</h2>
+                <div class="contents terms">
+                    <h3> 제1조 목적 </h3>
+                    <p>본 규약은 엘케이엠에스리미티드 주식회사(이하 “LKMS”)가 회원들의 단체보험서비스 이용에 관하여 LKMS와 회원간의 협약사항을 규정함을 그 목적으로 합니다.
+
+                    <h3> 제2조 내용 </h3>
+                    <p>LKMS가 본 단체보험규약에 동의하고 가입한 회원에게 제공하는 무료 단체보험서비스의 종류는 급성심근경색진단비보험을 말합니다.
+
+                    <h3>제3조 회원자격 </h3>
+                    <ol>
+                        <li>1) LKMS는 본 단체보험규약에 동의하고 가입한 자들을
+                            회원으로 하여 보험가입을 위한 단체(상법 및 보험업
+                            법상의 단체보험의 단체)를 구성하며, 보험가입에 동
+                            의한 각 회원들을 피보험자로 하여 급성심근경색진단
+                            비보험을 체결합니다.</li>
+                        <li>2) 본 규약에 동의한 회원은 이 규약의 당사자가 됩니다.</li>
+                        <li>3) 회원은 LKMS가 요구하는 개인정보를 입력하고 본
+                            규약에 대하여 동의 여부를 묻는 박스를 클릭하여 체
+                            크표시를 함으로써 급성심근경색진단비보험의 피보
+                            험자가 될 수 있는 회원자격을 얻게 됩니다.</li>
+                        <li> 4) 보험계약에 따른 세부내용은 보험사가 제공하는 보
+                            험약관에 따르며 본 약관에 정하지 않은 사항은
+                            LKMS가 보험사와 정한 약정에 따릅니다.</li>
+                    </ol>
+
+                    <h3>제4조 단체보험의 가입</h3>
+                </div>
+            </div>
+            <footer class="footer">
+                <a href="#" class="btn btn-secondary">닫기</a>
+            </footer>
+        </section>
     </body>
 </html>

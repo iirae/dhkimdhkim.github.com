@@ -5,6 +5,7 @@
   overflow: hidden;
   margin:0 auto;
   min-width: 320px;
+  max-width: 720px;
   padding: {
     top: 52px;
     right: constant(safe-area-inset-right);
@@ -17,6 +18,7 @@
   line-height: 1.38;
 
   .head-button {
+    z-index:20;
     position: fixed;
     top:0;
     left:0;
@@ -28,15 +30,28 @@
 
   .content {
     padding: 40px 30px 60px;
+
+    &.content-expired {
+      padding: {
+        top: 128px;
+        bottom: 0;
+      }
+    }
   }
+
   .footer {
+    z-index:20;
     position: fixed;
     bottom:0;
     bottom: constant(safe-area-inset-bottom);
     bottom: env(safe-area-inset-bottom);
     width: 100%;
-  }
 
+    .logo {
+      padding-bottom: 32px;
+      text-align: center;
+    }
+  }
 }
 
 // common
@@ -58,6 +73,22 @@
   color: #0e1012;
   font-weight: 500;
   line-height: 1.38;
+}
+
+h1.page-head  {
+  padding-top: 10px;
+
+  &.complete {
+    &::before {
+      content: '';
+      display: block;
+      margin-bottom: 10px;
+      width: 50px;
+      height: 50px;
+      background: url("../images/ico_complete.svg") no-repeat left;
+      background-size: cover;
+    }
+  }
 }
 
 input[type="checkbox"] {
@@ -99,6 +130,22 @@ input[type="checkbox"] {
   }
 }
 
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"] {
+  padding: 6px 0;
+  font-size: 16px;
+  color: #636b73;
+  line-height: 1.38;
+  border: solid #ced4da;
+  border-width: 0 0 1px 0;
+
+  &::placeholder {
+    color: #adb5bd;
+  }
+}
+
 .btn {
   display: inline-block;
   text-align:center;
@@ -114,19 +161,70 @@ input[type="checkbox"] {
     }
   }
 
+  &-close {
+    width: 24px;
+    height: 24px;
+    background: {
+      image: url("../images/btn_close.svg");
+      repeat: no-repeat;
+      position: center;
+      size: cover;
+    }
+  }
+
   &-primary {
     width: 100%;
     height:60px;
     line-height: 60px;
     font-size: 17px;
     color: #0e1012;
-    fong-weight: 700;
+    font-weight: 700;
     background: #ffeb00;
     border-radius: 2px;
 
     &.disabled {
       color: #adb5bd;
       background: #e9ecef;
+    }
+  }
+
+  &-secondary {
+    width: 100%;
+    height:60px;
+    line-height: 60px;
+    font-size: 17px;
+    color: #fff;
+    font-weight: 700;
+    background: #636b73;
+    border-radius: 2px;
+  }
+}
+
+.text {
+  &-info {
+    position: relative;
+    margin-top: 10px;
+    padding-left: 21px;
+    font-size: 13px;
+    color: #636b73;
+    letter-spacing: -0.8px;
+
+    &::before {
+      content: '!';
+      position: absolute;
+      top:0;
+      left:0;
+      display: block;
+      width: 15px;
+      height: 15px;
+      font-size: 11px;
+      color: #48acff;
+      font-weight: 700;
+      line-height: 15px;
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid #48acff;
+      border-radius: 50%;
     }
   }
 }
@@ -158,5 +256,240 @@ input[type="checkbox"] {
         }
       }
     }
+  }
+
+  &-signup_form {
+    margin-top: 63px;
+
+    li {
+
+      & + li {
+        margin-top: 20px;
+      }
+
+      &.resident-number {
+        div {
+          display: flex;
+          span {
+            margin: 0 11px 0 12px;
+          }
+        }
+      }
+
+    }
+
+    strong {
+      color: #212529;
+      font-weight: 400;
+      line-height: 1.43;
+    }
+
+    div {
+      margin-top: 2px;
+
+      input {
+        width: 100%;
+      }
+    }
+  }
+
+  &-complete {
+    padding-top: 40px;
+    font-size: 16px;
+    border-top: 1px solid #e9ecef;
+
+    li {
+      & + li {
+        margin-top: 20px;
+      }
+    }
+
+    span {
+      display: inline-block;
+      margin-right: 30px;
+      width: 64px;
+      color: #636b73;
+    }
+
+    strong {
+      color: #212529;
+      font-weight: 400;
+    }
+  }
+}
+
+.insurance-info {
+  position: relative;
+  padding: 20px 20px 0;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 1px 1px 8px 0 rgba(0, 0, 0, 0.2);
+
+  h2 {
+    font-size: 14px;
+    color: #636b73;
+    font-weight: 400;
+    line-height: 1.43;
+
+    &.hyundai {
+      &::before {
+        content: '';
+        display:inline-block;
+        margin: 0 6px 0 0;
+        width: 26px;
+        height: 26px;
+        vertical-align: middle;
+        border: 1px solid #e9ecef;
+        border-radius: 50%;
+        background: url("../images/img_logo_hyundai.png") no-repeat center;
+        background-size: 16px auto;
+      }
+    }
+  }
+
+  p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #212529;
+    font-weight: 500;
+  }
+
+  strong {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 48px;
+    height: 23px;
+    font-size: 13px;
+    color: #008dff;
+    font-weight: 500;
+    line-height: 23px;
+    text-align: center;
+    background: rgba(72, 172, 255, 0.2);
+    border-radius: 15px
+  }
+
+  a {
+    display: block;
+    margin-top: 20px;
+    padding: 13px 0 14px;
+    font-size: 12px;
+    color: #636b73;
+    font-weight: 700;
+    line-height: 1.67;
+    text-align: center;
+    border-top: 1px solid #e9ecef;
+  }
+}
+
+.content-expired {
+  text-align: center;
+
+  .page-head  {
+    padding-top:0;
+    &::before {
+      content: '';
+      display: block;
+      margin: 0 auto 10px;
+      width: 50px;
+      height: 50px;
+      background: url("../images/ico_expired.svg") no-repeat left;
+      background-size: cover;
+    }
+  }
+
+  .inbyu {
+    margin-top: 20px;
+    padding-top: 20px;
+    font-size: 16px;
+    color: #212529;
+    border-top: 1px solid #e9ecef;
+  }
+}
+
+.layer {
+  z-index:100;
+  position: fixed;
+  top: 0;
+  left:0;
+  right:0;
+  bottom:0;
+  background: #fff;
+
+  .head-button {
+    z-index:20;
+    padding: 18px 18px 10px;
+    height: 24px;
+    text-align: right;
+    background: #fff;
+  }
+
+  .container {
+    padding: 40px 30px 30px;
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 20px;
+      color: #0e1012;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+  }
+
+  .contents {
+    overflow-y: auto;
+    height: calc(100vh - (constant(safe-area-inset-bottom) + 52px + 70px + 50px + 60px));
+    height: calc(100vh - (env(safe-area-inset-bottom) + 52px + 70px + 50px + 60px));
+    line-height: 1.43;
+
+    &.terms {
+      h3 {
+        margin-top: 20px;
+        font-size: inherit;
+        font-weight: 400;
+
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
+    }
+
+    h3 {
+      font-size: 16px;
+      color: #212529;
+      font-weight: 400;
+      line-height: 1.25;
+    }
+
+    .table {
+      margin-top: 20px;
+      border-bottom: 1px solid #ced4da;
+      table {
+        table-layout: fixed;
+        width: 100%;
+        line-height: 1.43;
+        border-collapse: collapse;
+      }
+      th, td {
+        padding: 10px 10px 8px;
+        text-align: center;
+        border-top: 1px solid #ced4da;
+      }
+      th {
+        background: #f1f3f5;
+      }
+
+      th + th, td + td {
+        border-left: 1px solid #ced4da;
+      }
+    }
+
+  }
+
+  .footer {
+    z-index:20;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+    width: 100%;
   }
 }
