@@ -46,6 +46,7 @@ body.overlay {
   .footer {
     z-index:20;
     position: fixed;
+    left:0;
     bottom:0;
     bottom: constant(safe-area-inset-bottom);
     bottom: env(safe-area-inset-bottom);
