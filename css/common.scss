@@ -149,6 +149,10 @@ input[type="number"] {
   &::placeholder {
     color: #adb5bd;
   }
+  
+  &.security {
+    -webkit-text-security:disc;
+  }
 }
 
 .btn {
