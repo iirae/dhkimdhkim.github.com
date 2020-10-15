@@ -1,6 +1,3 @@
-# dhkimdhkim.github.com
-
-
 
 화면 확인 <br>
 https://dhkimdhkim.github.io/ <br>
