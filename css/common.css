@@ -109,6 +109,9 @@ input[type="number"] {
   input[type="email"]::placeholder,
   input[type="number"]::placeholder {
     color: #adb5bd; }
+  input.security {
+    -webkit-text-security:disc;
+  }
 
 .btn {
   display: inline-block;
