@@ -32,9 +32,9 @@
                         <dt><input type="checkbox" id="termAgreeAllCheckbox" class="all-check"><label for="termAgreeAllCheckbox">전체동의</label></dt>
                         <dd>
                             <ul>
-                                <li><input type="checkbox" id="termAgreeCheckbox2" class="eChk"><label for="termAgreeCheckbox2">단체보험 규약</label><a href="#layerTerm01" class="eLayer"> </a></li>
-                                <li><input type="checkbox" id="termAgreeCheckbox3" class="eChk"><label for="termAgreeCheckbox3">개인(신용) 정보 수집·이용에 관한 사항</label><a href="#layerTerm02" class="eLayer"> </a></li>
-                                <li><input type="checkbox" id="termAgreeCheckbox4" class="eChk"><label for="termAgreeCheckbox4">개인(신용)정보 제공에 관한 사항</label><a href="#layerTerm03" class="eLayer"> </a></li>
+                                <li><input type="checkbox" required id="termAgreeCheckbox2" class="eChk"><label for="termAgreeCheckbox2">단체보험 규약</label><a href="#layerTerm01" class="eLayer"> </a></li>
+                                <li><input type="checkbox" required id="termAgreeCheckbox3" class="eChk"><label for="termAgreeCheckbox3">개인(신용) 정보 수집·이용에 관한 사항</label><a href="#layerTerm02" class="eLayer"> </a></li>
+                                <li><input type="checkbox" required id="termAgreeCheckbox4" class="eChk"><label for="termAgreeCheckbox4">개인(신용)정보 제공에 관한 사항</label><a href="#layerTerm03" class="eLayer"> </a></li>
                                 <li><input type="checkbox" id="termAgreeCheckbox5" class="eChk"><label for="termAgreeCheckbox5">[선택] 보험상품 및 서비스 소개를 위한 정보 활용</label><a href="#layerTerm04" class="eLayer"> </a></li>
                             </ul>
                         </dd>
@@ -217,21 +217,34 @@
                     }
                 });
 
-                $(':checkbox:not(:first)', all).on('click', function(){
-                    let allCnt = $(":checkbox:not(:first)", all).length;
-                    let checkedCnt = $(":checkbox:not(:first)", all).filter(":checked").length;
+                  $(':checkbox:not(:first)', all).on('click', function(){
+                      let allCheck = $(":checkbox:not(:first)", all);
+                      let allCnt = $(":checkbox:not(:first)", all).length;
+                      let checkedCnt = $(":checkbox:not(:first)", all).filter(":checked").length;
+                      let requiredCheck = $(":checkbox:not(:first)", all).filter(":visible[required]");
+                    let  count = 0;
 
-                    if(allCnt === checkedCnt) {
-                        $(':checkbox:first', all).prop('checked', true);
-                        $('.btn-primary').removeClass('disabled');
-                    }
-                    else{
-                        $(':checkbox:first', all).prop('checked', false);
-                        $('.btn-primary').addClass('disabled');
-                    }
+                    $.each(requiredCheck, function(index, checkbox) {
+                        console.log(checkbox);
+                        let checked = $(checkbox).prop('checked');
+                        count = checked ? count+= 1 : count;
 
-                });
+                         if (requiredCheck.length === count) {
+                            $('.btn-primary').removeClass('disabled');
+                         } else {
+                            $('.btn-primary').addClass('disabled');
+                         }
+                    });
 
+                  if(allCnt === checkedCnt) {
+                      $(':checkbox:first', all).prop('checked', true);
+                  }
+                  else{
+                      $(':checkbox:first', all).prop('checked', false);
+                  }
+
+                  });
+                
                 $('body').on('click', '.eLayer', function (e) {
                     let targetLayer = $($(e.currentTarget).attr("href"));
 
