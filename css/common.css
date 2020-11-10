@@ -173,7 +173,7 @@ input[type="number"] {
     background-size: cover; }
 .text-link {
   display: block;
-  margin: 15px 0;
+  margin: -20px 0 25px;
   color: #008dff;
   text-decoration: underline;
 }
