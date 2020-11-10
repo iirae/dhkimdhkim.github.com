@@ -171,6 +171,12 @@ input[type="number"] {
     vertical-align: middle;
     background: url("../images/ico_text_info.svg") no-repeat center;
     background-size: cover; }
+.text-link {
+  display: block;
+  margin: 15px 0;
+  color: #008dff;
+  text-decoration: underline;
+}
 
 .section-terms_agree {
   padding: 20px 0 0; }
